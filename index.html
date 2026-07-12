@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для моей коти ❤️</title>
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+    <div id="starry-background"></div>
+    
+    <!-- === МУЗИЧНИЙ ПЛЕЄР === -->
+    <div id="music-player" class="music-player">
+        <audio id="bg-music"></audio>
+        <button id="main-music-btn" class="next-btn">Музычка 🎵</button>
+        
+        <div id="player-panel" class="playlist-menu hidden" style="width: 240px; padding: 20px 15px; text-align: center; margin-top: 10px;">
+            <div id="vinyl" class="vinyl" style="margin: 0 auto 15px; width: 100px; height: 100px; border-width: 3px; cursor: default;">
+                <div id="vinyl-center" class="vinyl-center" style="width: 45px; height: 45px;"></div>
+            </div>
+            <div id="time-display" style="font-size: 12px; margin-bottom: 8px; color: #cfcfcf;">0:00 / 0:00</div>
+            <input type="range" id="seek-bar" value="0" max="100" style="width: 100%; margin-bottom: 15px; cursor: pointer;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 15px;">
+                <button id="prev-track-btn" class="control-btn" style="font-size: 16px;">⏮️</button>
+                <button id="play-pause-btn" class="control-btn" style="font-size: 22px; padding: 5px 15px;">▶️</button>
+                <button id="next-track-btn" class="control-btn" style="font-size: 16px;">⏭️</button>
+            </div>
+            <button id="playlist-btn" class="next-btn" style="width: 100%; font-size: 14px;">Плейлист 📜</button>
+        </div>
+
+        <div id="playlist-menu" class="playlist-menu hidden" style="margin-top: 10px;">
+            <div style="padding: 10px;">
+                <input type="text" id="search-input" placeholder="🔍 Пошук треку..." style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #8b5cf6; background: #000; color: #fff; box-sizing: border-box;">
+            </div>
+            <ul id="playlist-list"></ul>
+        </div>
+    </div>
+
+    <!-- === ОСНОВНИЙ КОНТЕНТ === -->
+    <div class="main-screen" id="start-screen">
+        <div class="heart">❤️</div>
+        <h1 class="title">Для моей коти</h1>
+        <p class="subtitle">Уже целых 3 месяца<br>ты делаешь меня очень счастливым</p>
+        <button id="open-btn">[ Открыть подарок ]</button>
+    </div>
+
+    <div id="intro-screen" class="hidden">
+        <h2 id="intro-text"></h2>
+    </div>
+
+    <div id="chapter-1" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 1</span>
+        <h2>Тот самый день</h2>
+        <p>Знаешь, иногда самые важные вещи в жизни происходят совершенно случайно. 3 марта стало именно таким днем. Я не искал ничего особенного, но вдруг в моей жизни появилась ты. Мы просто начали общаться, но с каждым днем меня всё сильнее тянуло к тебе. А 12 апреля стало точкой отсчета. Днем, когда я понял, что ты — не просто человек по ту сторону экрана. Ты стала для меня кем-то невероятно важным, тем, о ком я думаю, засыпая и просыпаясь.</p>
+        <button id="next-btn-1" class="next-btn">Дальше ✨</button>
+    </div>
+
+    <div id="chapter-2" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 2</span>
+        <h2>Мой новый мир</h2>
+        <p>Котенок, за эти 3 месяца мой мир полностью перевернулся. И самое удивительное, что для настоящих чувств не существует расстояния. Да, между нами километры, но я ни на секунду не чувствую себя одиноким. Наши ночные звонки, когда мы можем болтать обо всем на свете до самого утра... Наши совместные катки в играх, где мы понимаем друг друга с полуслова, смеемся и просто наслаждаемся тем, что мы вместе. Ты показала мне, как это здорово — когда тебя ждут, когда тебя понимают, и когда тебя так сильно любят.</p>
+        <button id="next-btn-2" class="next-btn">Фотографии 📸</button>
+    </div>
+
+    <div id="chapter-3" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 3</span>
+        <h2>Наши моменты</h2>
+        <p>Даже на расстоянии мы создаем столько теплых воспоминаний.</p>
+        <div class="polaroid-gallery">
+            <div class="polaroid">
+                <img src="img/photo_1_2026-07-12_22-02-30.jpg" alt="Наши звонки">
+                <div class="caption">Лучшие разговоры 📞</div>
+            </div>
+            <div class="polaroid">
+                <img src="img/photo_2_2026-07-12_22-02-30.jpg" alt="Милая переписка">
+                <div class="caption">Милые моментики</div>
+            </div>
+            <div class="polaroid">
+                <img src="img/photo_3_2026-07-12_22-02-30.jpg" alt="Смешная переписка">
+                <div class="caption">Начало всего</div>
+            </div>
+        </div>
+        <button id="next-btn-3" class="next-btn">За что я тебя люблю ✨</button>
+    </div>
+
+    <div id="chapter-4" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 4</span>
+        <h2 id="reason-title">Причина №1</h2>
+        <p id="reason-text" style="min-height: 80px; display: flex; align-items: center; justify-content: center;">Мне нравится, что рядом с тобой я могу быть абсолютно собой.</p>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
+            <button id="next-reason-btn" class="next-btn" style="width: 100%;">Еще причина 💌</button>
+            <button id="next-btn-4" class="next-btn btn-purple" style="width: 100%;">Пойти дальше ✨</button>
+        </div>
+    </div>
+
+    <div id="chapter-sad" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 4.1</span>
+        <h2>Если тебе грустно... 💞</h2>
+        <p>Когда меня нет рядом, просто нажми на кнопку ниже.</p>
+        <button id="sad-heart-btn" class="next-btn btn-purple">💜 Нажми, если скучаешь по мне</button>
+        <div id="sad-message" class="hidden"></div>
+        <button id="next-btn-sad" class="next-btn">Дальше 🔓</button>
+    </div>
+
+    <div id="chapter-bluff" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 4.2</span>
+        <h2>Интуиция</h2>
+        <p>Выбери одну из трех карт.</p>
+        <div class="cards-container">
+            <div class="bluff-card"><div class="card-inner"><div class="card-front">1</div><div class="card-back">Я знал, что ты выберешь именно эту. Ты так предсказуема, котя ❤️</div></div></div>
+            <div class="bluff-card"><div class="card-inner"><div class="card-front">2</div><div class="card-back">Я знал, что ты выберешь именно эту. Ты так предсказуема, котя ❤️</div></div></div>
+            <div class="bluff-card"><div class="card-inner"><div class="card-front">3</div><div class="card-back">Я знал, что ты выберешь именно эту. Ты так предсказуема, котя ❤️</div></div></div>
+        </div>
+        <button id="next-btn-bluff" class="next-btn hidden">Дальше ⏱️</button>
+    </div>
+
+    <div id="chapter-safe" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 4.3</span>
+        <h2>Сейф</h2>
+        <p>Нажми все подсвеченные кнопки за 10 секунд!</p>
+        <div id="safe-timer">10.0</div>
+        <div class="safe-grid">
+            <div class="safe-btn"></div><div class="safe-btn"></div><div class="safe-btn"></div>
+            <div class="safe-btn"></div><div class="safe-btn"></div><div class="safe-btn"></div>
+            <div class="safe-btn"></div><div class="safe-btn"></div><div class="safe-btn"></div>
+        </div>
+        <button id="start-safe-btn" class="next-btn" style="margin-top: 15px;">Начать взлом</button>
+        <button id="next-btn-safe" class="next-btn hidden" style="margin-top: 15px;">Дальше 🔒</button>
+    </div>
+
+    <div id="chapter-cryptex" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 4.4</span>
+        <h2>Код доступа</h2>
+        <p>Введи секретное слово</p>
+        <div class="crypt-container">
+            <input type="text" maxlength="1" class="crypt-input">
+            <input type="text" maxlength="1" class="crypt-input">
+            <input type="text" maxlength="1" class="crypt-input">
+            <input type="text" maxlength="1" class="crypt-input">
+        </div>
+        <button id="btn-cryptex" class="next-btn hidden">Дальше 🧩</button>
+    </div>
+
+    <div id="chapter-puzzle" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 4.5</span>
+        <h2>Собери картинку</h2>
+        <p style="font-size: 13px; margin-bottom: 10px;">Выбирай кусочки снизу и ставь в нужные места.</p>
+        <div id="puzzle-board" class="puzzle-board"></div>
+        <div id="puzzle-bank" class="puzzle-bank"></div>
+        <button id="btn-puzzle" class="next-btn hidden">Дальше 💨</button>
+    </div>
+
+    <div id="chapter-breath" class="chapter-card hidden">
+        <div id="frost-overlay">Нажми сюда и подуй в микрофон<br>(Или нажми дважды, чтобы пропустить)</div>
+        <span class="chapter-badge">Глава 4.6</span>
+        <h2>Твое тепло</h2>
+        <p>Ты растопила лед.</p>
+        <button id="btn-breath-next" class="next-btn hidden">Дальше ⏳</button>
+    </div>
+
+    <div id="chapter-5" class="chapter-card hidden">
+        <span class="chapter-badge">Глава 5</span>
+        <h2>Мы вместе уже</h2>
+        <div class="timer-container">
+            <div class="timer-box"><span id="days">00</span><p>дней</p></div>
+            <div class="timer-box"><span id="hours">00</span><p>часов</p></div>
+            <div class="timer-box"><span id="minutes">00</span><p>минут</p></div>
+            <div class="timer-box"><span id="seconds">00</span><p>секунд</p></div>
+        </div>
+        <p style="margin-top: 15px;">И каждая секунда с тобой — особенная.</p>
+        <button id="next-btn-5" class="next-btn" style="margin-top: 15px;">Финал 💌</button>
+        <div id="password-section" class="hidden" style="margin-top: 15px;">
+            <p style="font-size: 13px; color: #cfcfcf; margin-bottom: 10px;">Введи наш секретный код</p>
+            <input type="text" id="secret-code" maxlength="4" placeholder="****" inputmode="numeric">
+            <button id="unlock-btn" class="next-btn" style="display: block; margin: 10px auto 0;">Открыть 🔒</button>
+            <p id="error-msg" class="hidden">Неправильный код, котя)</p>
+        </div>
+    </div>
+
+    <div id="chapter-6" class="chapter-card hidden">
+        <span class="chapter-badge">Финал</span>
+        <h2>Для тебя</h2>
+        <div id="typed-letter" class="typed-text"></div>
+    </div>
+
+    <div id="final-screen" class="hidden">
+        <div class="final-heart">❤️</div>
+        <h1 class="final-text">Спасибо тебе за эти три месяца.</h1>
+        <h2 class="final-subtext">Я люблю тебя, котя ❤️</h2>
+        <p class="signature">Сделано специально для моей коти ❤️<br>С любовью, Женя.</p>
+    </div>
+
+    <!-- === СПЛИВАЮЧЕ ВІКНО НАГОРОДИ (ПОПАП) === -->
+    <div id="reward-modal" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease;">
+        <div style="text-align: center; width: 90%; max-width: 400px;">
+            <h2 style="color: #ff7eb3; margin-bottom: 20px; font-size: 28px; text-shadow: 0 0 15px rgba(255, 126, 179, 0.5);">Уровень пройден! 🏆</h2>
+            
+            <div id="reward-card" style="padding: 25px 20px; border-radius: 12px; color: #fff; box-shadow: 0 4px 25px rgba(255,255,255,0.2); border: 2px dashed rgba(255,255,255,0.8); margin-bottom: 25px; transform: scale(0.8); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+                <h3 id="reward-title" style="margin: 0 0 10px 0; font-size: 22px;">Название</h3>
+                <p id="reward-desc" style="margin: 0; font-size: 16px; line-height: 1.4;">Описание</p>
+                <small style="display: block; margin-top: 15px; font-weight: bold; opacity: 0.9; font-size: 14px;">[ 1 использование ]</small>
+            </div>
+
+            <button id="claim-reward-btn" class="next-btn" style="background: #ff6fa8; color: #fff; border-color: #ff6fa8; width: 100%; font-size: 18px; box-shadow: 0 0 20px rgba(255, 111, 168, 0.5);">Забрать и идти дальше ✨</button>
+        </div>
+    </div>
+
+    <!-- ТУТ ПІДКЛЮЧАЄТЬСЯ JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
